@@ -1,3 +1,8 @@
+/* Added accessibility feature: Base accessibility styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,71 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Added accessibility feature: Proper line height for readability */
+  line-height: 1.5;
+  /* Added accessibility feature: Minimum font size for accessibility */
+  font-size: 16px;
+  /* Added accessibility feature: High contrast colors */
+  color: #212529;
+  background-color: #ffffff;
+}
+
+/* Added accessibility feature: Proper heading hierarchy and spacing */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+/* Added accessibility feature: Proper paragraph spacing */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Added accessibility feature: Link accessibility */
+a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #004499;
+}
+
+a:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Added accessibility feature: List accessibility */
+ul, ol {
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  /* Added accessibility feature: Code block accessibility */
+  background-color: #f8f9fa;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
 }

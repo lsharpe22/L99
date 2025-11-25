@@ -29,6 +29,8 @@ function App() {
     <Router>
       <div>
         {isAuthenticated && <Navigation onLogout={handleLogout} />}
+        {/* Added accessibility feature: Main landmark for screen readers */}
+        <main id="main-content" role="main">
         <Routes>
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/dashboard" element={
@@ -50,6 +52,7 @@ function App() {
             isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
           } />
         </Routes>
+        </main>
       </div>
     </Router>
   );

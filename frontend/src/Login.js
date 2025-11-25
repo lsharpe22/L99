@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login({ onLogin }) {
@@ -32,26 +32,53 @@ function Login({ onLogin }) {
 
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
+      {/* Added accessibility feature: Proper heading hierarchy */}
+      <h1>AI Analytics Dashboard Login</h1>
+      {/* Added accessibility feature: Form with proper labels and ARIA attributes */}
+      <form onSubmit={handleSubmit} aria-labelledby="login-heading">
+        <h2 id="login-heading">Sign In</h2>
+        
+        {/* Added accessibility feature: Proper label association and required field indication */}
+        <div>
+          <label htmlFor="username-input">Username *</label>
+          <input
+            id="username-input"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            aria-required="true"
+            aria-describedby={error ? "error-message" : "login-instructions"}
+            autoComplete="username"
+          />
+        </div>
+        
+        {/* Added accessibility feature: Proper label association and required field indication */}
+        <div>
+          <label htmlFor="password-input">Password *</label>
+          <input
+            id="password-input"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            aria-required="true"
+            aria-describedby={error ? "error-message" : "login-instructions"}
+            autoComplete="current-password"
+          />
+        </div>
+        
+        <button type="submit" aria-describedby="login-instructions">Login</button>
       </form>
-      {error && <p>{error}</p>}
-      <p>Use "lauren" for both username and password</p>
+      
+      {/* Added accessibility feature: ARIA live region for error announcements */}
+      {error && (
+        <div id="error-message" role="alert" aria-live="assertive">
+          <p>{error}</p>
+        </div>
+      )}
+      
+      
     </div>
   );
 }
