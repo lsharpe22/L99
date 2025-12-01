@@ -19,9 +19,13 @@
 
 /* Added accessibility feature: Form accessibility improvements */
 form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1f1f1f 100%);
+  border-radius: 16px;
+  border: 1px solid #555;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 form div {
@@ -33,35 +37,45 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #f5f5f5;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  padding: 14px 16px;
+  border: 2px solid #555;
+  border-radius: 8px;
   font-size: 16px;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  transition: all 0.3s ease;
 }
 
 input:focus {
-  border-color: #005fcc;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  outline: none;
 }
 
 button {
-  background-color: #005fcc;
+  background: linear-gradient(135deg, #8b0000 0%, #a00000 100%);
   color: white;
-  padding: 12px 20px;
+  padding: 16px 32px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 600;
   min-height: 44px;
-  min-width: 44px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
 }
 
 button:hover {
-  background-color: #004494;
+  background: linear-gradient(135deg, #a00000 0%, #c00000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 0, 0, 0.4);
 }
 
 button:focus {
@@ -71,44 +85,51 @@ button:focus {
 
 /* Added accessibility feature: Navigation accessibility - horizontal layout */
 nav {
-  background-color: #f8f9fa;
-  padding: 15px 20px;
-  border-bottom: 1px solid #dee2e6;
+  background: linear-gradient(135deg, #2d1b1b 0%, #1a1a1a 100%);
+  padding: 20px 40px;
+  border-bottom: 3px solid #8b0000;
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 nav a, nav button {
   text-decoration: none;
-  color: #005fcc;
-  padding: 10px 20px;
-  background: none;
-  border: none;
+  color: #ff6b6b;
+  padding: 12px 24px;
+  background: rgba(139, 0, 0, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
   cursor: pointer;
   font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover, nav button:hover {
-  background-color: #e9ecef;
+  background: linear-gradient(135deg, #8b0000 0%, #a00000 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 0, 0, 0.4);
 }
 
 /* Added accessibility feature: Error message styling */
 [role="alert"] {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: #4a1a1a;
+  color: #ff9999;
   padding: 10px;
-  border: 1px solid #f5c6cb;
+  border: 1px solid #8b0000;
   border-radius: 4px;
   margin: 10px 0;
 }
 
 /* Added accessibility feature: Status message styling */
 [role="status"] {
-  background-color: #d1ecf1;
-  color: #0c5460;
+  background-color: #2d2d2d;
+  color: #ff6b6b;
   padding: 10px;
-  border: 1px solid #bee5eb;
+  border: 1px solid #555;
   border-radius: 4px;
   margin: 10px 0;
 }
